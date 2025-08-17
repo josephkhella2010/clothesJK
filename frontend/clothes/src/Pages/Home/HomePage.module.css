@@ -1,0 +1,284 @@
+.HomePageWrapper {
+  width: 100%;
+  min-height: 100dvh;
+  background-color: rgb(134, 134, 134);
+}
+.HomeUpperSectionContainer {
+  width: 100%;
+  /*   background-color: rgb(27, 137, 60);
+ */
+  padding: 100px 20px 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+.HomeUpperSectionFirstSection,
+.HomeUpperSectionSecondSection {
+  /*   background-color: blueviolet;
+ */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.HomeUpperSectionFirstSection p,
+.HomeUpperSectionSecondSection p {
+  width: 70%;
+  color: rgb(14 27 77 / 75%);
+}
+.HomeUpperSectionFirstSection h1,
+.HomeUpperSectionSecondSection h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(14 27 77 / 75%);
+}
+/* slider container */
+.SliderContainer {
+  width: 100%;
+  height: 300px;
+  padding: 0px 20px;
+  position: relative;
+}
+.SliderSection {
+  background-color: orange;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  overflow: hidden;
+}
+.SliderContent {
+  display: flex;
+  gap: 20px;
+}
+.SliderSection img {
+  width: calc(100% / 3);
+  flex-shrink: 0;
+  object-fit: fill; /* keep aspect ratio while filling space */
+}
+.LeftIcons,
+.RightIcons {
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 300;
+}
+.LeftIcons {
+  left: -5px;
+  transform: translate(0%, 50%);
+}
+.RightIcons {
+  right: -5px;
+  transform: translate(0%, 50%);
+}
+/*  */
+/* lower container */
+.HomeLowerSectionContainer {
+  /*   background-color: red;
+ */
+  width: 100%;
+  /*   background-color: rgb(27, 137, 60);
+ */
+  padding: 50px 0px 50px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+.HomeLowerSectionFirstSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.HomeLowerSectionFirstSection p {
+  width: 70%;
+  color: rgb(14 27 77 / 75%);
+}
+.HomeLowerSectionFirstSection h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(14 27 77 / 75%);
+}
+.HomeLowerSectionSecondSection {
+  /*   background-color: yellow;
+ */
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* spacing between cards */
+  padding: 20px;
+}
+.HomeContactContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.HomeContactContainer h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: rgb(14 27 77 / 75%);
+  text-align: center;
+}
+.HomeContactContainer p {
+  color: rgb(14 27 77 / 75%);
+  text-align: center;
+}
+.HomeContactContainer a {
+  color: rgb(14 27 77 / 75%);
+  cursor: pointer;
+  text-align: center;
+}
+.LeftIcons,
+.RightIcons {
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.LeftIcons {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.RightIcons {
+  right: 0;
+  transform: translateY(-50%);
+}
+
+/* sliderTwo */
+.sliderTwoContainer {
+  width: 100%;
+  height: 300px;
+  background-color: brown;
+  padding: 50px 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sliderTwoSection {
+  background-color: blue;
+  width: 90%;
+  height: 100%;
+  overflow: hidden;
+}
+.sliderTwoContent {
+  display: flex;
+  gap: 15px;
+}
+.sliderTwoContent img {
+  /*   width: calc((100% - 15px) / 3); /* 3 images per page minus 2 gaps 
+ */
+  height: 300px;
+  object-fit: fill;
+}
+
+/*  */
+
+/*  */
+/*  */
+@media screen and (max-width: 850px) {
+  .HomeLowerSectionSecondSection {
+    grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+  }
+}
+@media screen and (max-width: 750px) {
+  .HomeUpperSectionFirstSection {
+    width: 90%;
+  }
+  .HomeUpperSectionFirstSection p {
+    width: 90%;
+  }
+  .sliderTwoContent img {
+    /*width: calc((100% - 15px) / 2);  2 images per page minus 2 gaps */
+    height: 300px;
+    object-fit: fill;
+  }
+}
+/* @media screen and (max-width: 650px) {
+  .HomeLowerSectionSecondSection {
+    grid-template-columns: repeat(1, 1fr); 
+    place-items: center;
+  }
+  .HomeContactContainer {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sliderTwoContent img {
+    width: calc((100% - 15px) / 1); 
+  }
+} */
+/*  */
+.SliderContainer {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.SliderSection {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.SliderContent {
+  display: flex;
+  gap: 20px;
+}
+
+.SliderContent img {
+  /*   width: calc((100% - 40px) / 2); /* 3 images per page minus 2 gaps 
+ */
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* sliderewjkfuwefkuwef */
+/* sliderTwo */
+/* sliderTwo */
+.sliderTwoContainer {
+  width: 100%;
+  height: 300px;
+  background-color: brown;
+  padding: 50px 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderTwoSection {
+  background-color: blue;
+  width: 90%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sliderTwoContent {
+  display: flex;
+  gap: 15px; /* must equal gap in JS */
+}
+
+.sliderTwoContent img {
+  height: 300px;
+  object-fit: cover;
+}
+
+/* other sections you had remain unchanged */

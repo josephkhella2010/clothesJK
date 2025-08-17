@@ -1,0 +1,186 @@
+.navigationWrapper {
+  width: 100%;
+  height: 60px;
+  background-color: blue;
+}
+.desktopContainer {
+  width: 100%;
+  height: 100%;
+  background-color: chartreuse;
+}
+.desktopSection {
+  background-color: yellow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 10px 20px;
+}
+.desktopMenuContent {
+  background-color: chocolate;
+  display: flex;
+  gap: 30px;
+  height: 100%;
+  align-items: center;
+  width: fit-content;
+}
+.desktopMenuContent li {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 900;
+  position: relative;
+}
+
+.desktopMenuContent li:hover {
+  color: white;
+}
+.desktopMenuContent li::before {
+  content: "";
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  display: block;
+  top: 25px;
+  left: 0px;
+  width: 0%;
+  height: 2px;
+  border-radius: 20px;
+  transition: width 0.1s linear;
+}
+.desktopMenuContent li:hover::before {
+  width: 110%;
+}
+.desktopmenuBtn {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+}
+.desktopmenuBtn button {
+  padding: 8px 5px;
+  border-radius: 20px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: transparent;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.desktopmenuBtn button:hover {
+  background-color: black;
+  border: none;
+  color: aliceblue;
+}
+
+/* Mobile */
+.MobileContainer {
+  width: 100%;
+  height: 100%;
+  background-color: chartreuse;
+}
+.MobileSection {
+  background-color: yellow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 10px 10px;
+  gap: 10px;
+  position: relative;
+}
+.hamSection {
+  background-color: coral;
+  width: 60px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.line {
+  width: 80%;
+  height: 3px;
+  background-color: aliceblue;
+  border-radius: 20px;
+}
+.MobileMenuSection {
+  position: absolute;
+  top: 0px;
+  left: 100%;
+  background-color: brown;
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0px;
+  gap: 25px;
+  transition: left 0.3s linear;
+  z-index: 200;
+}
+.ShowMenu {
+  left: 0%;
+}
+.backDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.backDiv p {
+  color: cornflowerblue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.backIcon {
+  color: cornflowerblue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.MobileMenuSection li {
+  list-style: none;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+.MobileMenuSection li:hover {
+  background-color: green;
+}
+.mobileMenuBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+.mobileMenuBtn button {
+  padding: 8px 5px;
+  border-radius: 22px;
+  width: 70%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: transparent;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.mobileMenuBtn button:hover {
+  background-color: black;
+  border: none;
+  color: aliceblue;
+}
