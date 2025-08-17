@@ -319,6 +319,7 @@ export default function SliderSectionTwo() {
         setCurrentIndex(0);
       }
     }, 3000);
+    return () => window.clearInterval(interval);
   }, [currentIndex, totalPages]);
 
   // correct formula
