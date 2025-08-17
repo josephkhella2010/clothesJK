@@ -319,8 +319,6 @@ export default function SliderSectionTwo() {
         setCurrentIndex(0);
       }
     }, 3000);
-
-    return () => clearInterval(interval);
   }, [currentIndex, totalPages]);
 
   // correct formula
