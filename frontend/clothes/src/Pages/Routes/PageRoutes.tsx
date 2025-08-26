@@ -8,6 +8,7 @@ import HomePage from "../Home/HomePage";
 
 import NavigationContainer from "../navigation/NavigationContainer";
 import AddCartPage from "../addCartPage/AddCartPage";
+import AboutUSPage from "../AboutUsPage/AboutUSPage";
 
 export default function PageRoutes() {
   return (
@@ -21,6 +22,7 @@ export default function PageRoutes() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/addCart" element={<AddCartPage />} />
         <Route path="/singleproduct/:id" element={<SingleProductPage />} />
+        <Route path="/aboutUs" element={<AboutUSPage />} />
       </Routes>
     </Router>
   );
