@@ -58,11 +58,56 @@
   gap: 15px;
 }
 .aboutUsSecondSectionImg {
-  background-color: rgb(255, 34, 0);
   width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .aboutUsSecondSectionImg img {
   width: 100%;
-  height: 100%;
+  height: 85%;
+}
+.activelySectionContainer {
+  background-color: springgreen;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.activelySectionSection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+.activitySectionItem {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.activitySectionItemText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.activitySectionItem img {
+  width: 100%;
+  height: 200px;
+}
+
+/*  */
+
+@media screen and (max-width: 850px) {
+  .activelySectionSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .activelySectionSection {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

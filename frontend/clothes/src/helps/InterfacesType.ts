@@ -24,3 +24,8 @@ export interface SingleUserType {
   username: string;
   password: string;
 }
+export interface ActivityType {
+  img: string;
+  header: string;
+  description: string;
+}
