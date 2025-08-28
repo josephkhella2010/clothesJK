@@ -7,7 +7,7 @@ export interface ProductType {
   name: string;
   description: string;
   price: number;
-  imgs: ImgsType[];
+  imgs?: ImgsType[];
 }
 
 export interface ProductState {

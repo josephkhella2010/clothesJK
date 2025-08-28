@@ -23,6 +23,7 @@
   justify-content: center;
   align-items: center;
   color: aliceblue;
+  text-align: center;
 }
 .UpperSectionContainerText h3 {
   font-size: 20px;
@@ -31,6 +32,7 @@
 }
 .aboutUsSecondSectionContainer {
   display: flex;
+  align-items: center;
   padding: 50px 20px;
   border-bottom: 2px solid black;
   gap: 20px;
@@ -59,6 +61,7 @@
 }
 .aboutUsSecondSectionImg {
   width: 40%;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,12 +72,12 @@
   height: 85%;
 }
 .activelySectionContainer {
-  background-color: springgreen;
   padding: 100px 20px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   align-items: center;
+  border-bottom: 2px solid black;
 }
 
 .activelySectionSection {
@@ -97,17 +100,77 @@
   width: 100%;
   height: 200px;
 }
-
+.AboutUsLowerSectionContainer {
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.AboutUsLowerSectionContainer img {
+  width: 70%;
+  height: 250px;
+}
+.AboutUsLowerSectionContainer p {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: aliceblue;
+  width: 35%;
+  text-align: center;
+}
+.AboutUsLowerSectionContainer button {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: black;
+  color: aliceblue;
+  cursor: pointer;
+}
 /*  */
-
+@media screen and (max-width: 900px) {
+  .aboutUsSecondSectionImg {
+    height: 350px;
+  }
+  .AboutUsLowerSectionContainer p {
+    width: 60%;
+  }
+}
 @media screen and (max-width: 850px) {
   .activelySectionSection {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 750px) {
+  .aboutUsSecondSectionContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .aboutUsSecondSectionText {
+    width: 90%;
+  }
+
+  .aboutUsSecondSectionImg {
+    width: 90%;
+    height: 350px;
+  }
+  .AboutUsLowerSectionContainer p {
+    width: 75%;
+  }
+  .AboutUsLowerSectionContainer img {
+    width: 90%;
   }
 }
 
 @media screen and (max-width: 450px) {
   .activelySectionSection {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .AboutUsLowerSectionContainer p {
+    width: 100%;
+    font-size: 20px;
   }
 }

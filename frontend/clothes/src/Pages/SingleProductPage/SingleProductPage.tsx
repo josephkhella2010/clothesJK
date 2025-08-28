@@ -7,6 +7,7 @@ import { fetchProducts } from "../../reducerSlices/ProductSlice";
 import styles from "./singleProduct.module.css";
 import axios from "axios";
 import { setCartItem } from "../../reducerSlices/CartItemSlice";
+import Trainig from "./Trainig";
 export default function SingleProductPage() {
   const dispatch = useDispatch();
   const { id } = useParams<{ id: string }>();
@@ -66,6 +67,7 @@ export default function SingleProductPage() {
           <button onClick={handleAddCart}> add to cart</button>
         </div>
       )}
+      <Trainig singleProduct={singleProduct} />
     </div>
   );
 }

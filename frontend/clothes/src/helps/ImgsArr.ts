@@ -7,4 +7,6 @@ export const ImgsArr = {
   AboutUsPageActivityTwo: `${BaseUrl}HomePageSlideTwo.webp`,
   AboutUsPageActivityThree: `${BaseUrl}HomePageSlideThree.webp`,
   AboutUsPageActivityFour: `${BaseUrl}HomePageSlideFour.webp`,
+  AboutUsPageLowerSection: `${BaseUrl}HomePageSlideFive.webp`,
+  ContactUsPageLowerSection: `${BaseUrl}HomePageSlideEight.webp`,
 };

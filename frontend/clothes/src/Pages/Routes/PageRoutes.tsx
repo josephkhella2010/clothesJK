@@ -9,6 +9,7 @@ import HomePage from "../Home/HomePage";
 import NavigationContainer from "../navigation/NavigationContainer";
 import AddCartPage from "../addCartPage/AddCartPage";
 import AboutUSPage from "../AboutUsPage/AboutUSPage";
+import ContactUsPage from "../ContactUsPage/ContactUsPage";
 
 export default function PageRoutes() {
   return (
@@ -23,6 +24,7 @@ export default function PageRoutes() {
         <Route path="/addCart" element={<AddCartPage />} />
         <Route path="/singleproduct/:id" element={<SingleProductPage />} />
         <Route path="/aboutUs" element={<AboutUSPage />} />
+        <Route path="/contactUs" element={<ContactUsPage />} />
       </Routes>
     </Router>
   );
