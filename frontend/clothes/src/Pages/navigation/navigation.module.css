@@ -184,3 +184,71 @@
   border: none;
   color: aliceblue;
 }
+
+/*  */
+.flagsContainer {
+  width: 80px;
+  height: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.flagsContainer img {
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+}
+.flagMainImg {
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.flagsSubMenu {
+  position: absolute;
+  background-color: red;
+  width: 200px;
+  top: 52px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+}
+.flagsSubMenuItem {
+  background-color: aliceblue;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  width: 200px;
+}
+.flagsSubMenuItem:nth-of-type(1) {
+  border-bottom: 1px solid black;
+}
+.flagsSubMenuItem:nth-of-type(2) {
+}
+.flagsSubMenuItem img {
+  width: 80px;
+  height: 40px;
+}
+
+.flagsSubMenuforMobile {
+  width: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 15px;
+}
+.flagsSubMenuforMobile img {
+  width: 50px;
+  height: 15px;
+}
+.flagsSubMenuforMobileMain {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  top: -320%;
+  left: 0%;
+}
+.flagsSubMenuforMobile:nth-of-type(1) {
+  border-bottom: 1px solid black;
+}

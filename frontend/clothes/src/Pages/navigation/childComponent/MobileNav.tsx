@@ -4,6 +4,7 @@ import { BiArrowBack } from "react-icons/bi";
 import { setLogOUt } from "../../../reducerSlices/LoginUserSlice";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import FlagSection from "./FlagSection";
 interface PropsType {
   showMenu: boolean;
   setShowMenu: (showMenu: boolean) => void;
@@ -62,6 +63,7 @@ export default function MobileNav({ showMenu, setShowMenu }: PropsType) {
               <button onClick={() => navigate("/login")}>Login</button>
             )}
           </div>
+          <FlagSection showMenu={showMenu} setShowMenu={setShowMenu} />
         </div>
       </div>
     </div>

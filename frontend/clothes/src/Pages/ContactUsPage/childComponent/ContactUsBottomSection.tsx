@@ -4,7 +4,7 @@ export default function ContactUsBottomSection() {
   return (
     <div className={styles.ContactUsBottomSectionMainContainer}>
       <div className={styles.ContactUsBottomSectionContainer}>
-        <img src={ImgsArr["ContactUsPageLowerSection"]} alt="not found" />
+        <img src={ImgsArr["ContactUsPageMapSection"]} alt="not found" />
         <div className={styles.ContactUsBottomSectionText}>
           <a href="" target="_blank">
             10095 ,Hickman ct unit 1, Iowa ,Clive,50325 United States

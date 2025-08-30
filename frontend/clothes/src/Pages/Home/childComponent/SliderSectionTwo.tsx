@@ -325,8 +325,8 @@ export default function SliderSectionTwo() {
   // correct formula
   const translateX =
     currentIndex * (slideWidth * visibleSliders + gap * visibleSliders);
-  console.log(slideWidth);
-  return (
+  /*   console.log(slideWidth);
+   */ return (
     <div className={styles.sliderTwoContainer}>
       <div>
         <MdKeyboardArrowLeft

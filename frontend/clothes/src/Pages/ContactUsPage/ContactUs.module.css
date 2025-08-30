@@ -1,17 +1,25 @@
 .ContactUsPageWrapper {
   width: 100%;
   min-height: 100dvh;
-  background-color: burlywood;
+  background-color: rgb(165 104 34);
+}
+.ContactUsFirstSectionMainContainer {
+  /*   background-color: chartreuse;
+ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .ContactUsFirstSectionContainer {
-  background-color: brown;
+  /*   background-color: brown;
+ */
   padding: 100px 20px;
   display: grid;
   gap: 50px;
-  grid-template-columns: 7fr 3fr; /* same as 70/30 but respects padding */
-
-  max-width: 1200px; /* control container width */
+  grid-template-columns: 5fr 5fr; /* same as 70/30 but respects padding */
+  width: 85%;
 }
+
 .ContactUsFirstSectionTextSection {
   display: flex;
   flex-direction: column;
@@ -36,10 +44,12 @@
 .ContactUsFirstSectionImgSection img {
   width: 100%;
   height: 250px;
+  border-radius: 10px;
 }
 /*  */
 .ContactUsMiddleSectionMainContainer {
-  background-color: black;
+  /*   background-color: black;
+ */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -47,7 +57,8 @@
   padding: 100px 20px;
 }
 .ContactUsMiddleSectionContainer {
-  background-color: chartreuse;
+  /*   background-color: chartreuse;
+ */
   display: grid;
   width: 70%;
   grid-template-columns: repeat(2, 1fr);
@@ -79,7 +90,8 @@
   font-size: 35px;
 }
 .ContactUsBottomSectionMainContainer {
-  background-color: cornflowerblue;
+  /*   background-color: cornflowerblue;
+ */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,7 +99,8 @@
 }
 .ContactUsBottomSectionContainer {
   width: 70%;
-  background-color: crimson;
+  /*   background-color: crimson;
+ */
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 0px 3px 1px;
   border: 1px solid black;
@@ -102,7 +115,8 @@
   border-radius: 5px;
 }
 .ContactUsBottomSectionText {
-  background-color: darksalmon;
+  /*   background-color: darksalmon;
+ */
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -115,6 +129,7 @@
   text-align: center;
   cursor: pointer;
   font-size: 18px;
+  color: aliceblue;
 }
 /*  */
 
@@ -128,6 +143,7 @@
   .ContactUsFirstSectionContainer {
     grid-template-columns: repeat(1, 1fr);
     text-align: center;
+    width: 95%;
   }
   .ContactUsFirstSectionTextSection {
     place-items: center;
@@ -139,11 +155,17 @@
     grid-template-columns: repeat(1, 1fr);
   }
   .ContactUsBottomSectionContainer {
-    width: 80%;
+    width: 95%;
     flex-direction: column;
   }
   .ContactUsBottomSectionContainer img {
     width: 100%;
+  }
+  .ContactUsMiddleSectionContainer {
+    width: 95%;
+  }
+  .ContactUsBottomSectionText {
+    padding-bottom: 25px;
   }
 }
 @media screen and (max-width: 450px) {

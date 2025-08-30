@@ -29,3 +29,7 @@ export interface ActivityType {
   header: string;
   description: string;
 }
+export interface FlagsMenuType {
+  url: string;
+  language: string;
+}

@@ -12,7 +12,7 @@ export default function ContactUsFirstSection() {
           </p>
         </div>
         <div className={styles.ContactUsFirstSectionImgSection}>
-          <img src={ImgsArr["ContactUsPageLowerSection"]} alt="not found" />
+          <img src={ImgsArr["ContactUsPageUpperSection"]} alt="not found" />
         </div>
       </div>
     </div>

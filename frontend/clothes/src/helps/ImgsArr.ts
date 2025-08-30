@@ -1,12 +1,16 @@
-const BaseUrl = "/foto/homeFoto/";
+const BaseUrl = "/foto/";
 
 export const ImgsArr = {
-  AboutUsPage: `${BaseUrl}HomePageSlideEight.webp`,
-  AboutUsPageTwo: `${BaseUrl}HomePageSlideSeven.webp`,
-  AboutUsPageActivityOne: `${BaseUrl}HomePageSlideOne.webp`,
-  AboutUsPageActivityTwo: `${BaseUrl}HomePageSlideTwo.webp`,
-  AboutUsPageActivityThree: `${BaseUrl}HomePageSlideThree.webp`,
-  AboutUsPageActivityFour: `${BaseUrl}HomePageSlideFour.webp`,
-  AboutUsPageLowerSection: `${BaseUrl}HomePageSlideFive.webp`,
-  ContactUsPageLowerSection: `${BaseUrl}HomePageSlideEight.webp`,
+  AboutUsPage: `${BaseUrl}homeFoto/HomePageSlideEight.webp`,
+  AboutUsPageTwo: `${BaseUrl}homeFoto/HomePageSlideSeven.webp`,
+  AboutUsPageActivityOne: `${BaseUrl}homeFoto/HomePageSlideOne.webp`,
+  AboutUsPageActivityTwo: `${BaseUrl}homeFoto/HomePageSlideTwo.webp`,
+  AboutUsPageActivityThree: `${BaseUrl}homeFoto/HomePageSlideThree.webp`,
+  AboutUsPageActivityFour: `${BaseUrl}homeFoto/HomePageSlideFour.webp`,
+  AboutUsPageLowerSection: `${BaseUrl}homeFoto/HomePageSlideFive.webp`,
+  ContactUsPageUpperSection: `${BaseUrl}ContactUsFoto/contactUsImg.webp`,
+  ContactUsPageMapSection: `${BaseUrl}ContactUsFoto/mapImg.webp`,
+
+  svFlag: `${BaseUrl}flags/svFlag.png`,
+  engFlag: `${BaseUrl}flags/engFlag.png`,
 };

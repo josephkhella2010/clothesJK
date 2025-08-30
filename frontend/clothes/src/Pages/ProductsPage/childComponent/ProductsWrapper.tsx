@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { fetchProducts } from "../../../reducerSlices/ProductSlice";
 import LoadingPage from "../../LoadingPage/LoadingPage";
 import ProductItem from "./ProductItem";
-
+import styles from "../productsPage.module.css";
 export default function ProductsWrapper() {
   const dispatch = useDispatch<AppDispatch>();
 
@@ -18,16 +18,15 @@ export default function ProductsWrapper() {
   console.log(isLoading);
 
   return (
-    <>
+    <div className={styles.productMainContainer}>
+      <h1>Products</h1>
       {isLoading ? (
         <>
           <LoadingPage />
         </>
       ) : (
-        <div>
-          <ProductItem products={products} />
-        </div>
+        <ProductItem products={products} />
       )}
-    </>
+    </div>
   );
 }

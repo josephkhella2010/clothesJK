@@ -3,6 +3,8 @@ import ProductSliceReducer from "../reducerSlices/ProductSlice";
 import UserSliceReducer from "../reducerSlices/UserSlice";
 import LoginUserSliceReducer from "../reducerSlices/LoginUserSlice";
 import CartItemSliceReducer from "../reducerSlices/CartItemSlice";
+import LangSliceReducer from "../reducerSlices/LangSlice";
+
 import { sagaRoot } from "../saga/sagaRoot";
 import createSagaMiddleware from "redux-saga";
 
@@ -15,6 +17,7 @@ const store = configureStore({
     userData: UserSliceReducer,
     loginUserData: LoginUserSliceReducer,
     cartItemData: CartItemSliceReducer,
+    LangData: LangSliceReducer,
   },
   middleware: (getDefault) =>
     getDefault({ thunk: false }).concat(sagaMiddleware),

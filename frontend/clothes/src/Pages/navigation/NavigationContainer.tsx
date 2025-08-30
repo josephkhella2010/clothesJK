@@ -3,7 +3,7 @@ import DesktopNav from "./childComponent/DesktopNav";
 import MobileNav from "./childComponent/MobileNav";
 import styles from "./navigation.module.css";
 export default function NavigationContainer() {
-  const MobileWidth = 650;
+  const MobileWidth = 750;
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(false);
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function NavigationContainer() {
       {isMobile ? (
         <MobileNav showMenu={showMenu} setShowMenu={setShowMenu} />
       ) : (
-        <DesktopNav />
+        <DesktopNav showMenu={showMenu} setShowMenu={setShowMenu} />
       )}
     </div>
   );
