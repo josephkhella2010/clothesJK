@@ -79,6 +79,13 @@
   font-size: 20px;
   cursor: pointer;
   transition: transform 0.3s linear;
+  background-color: rgba(255, 255, 255, 0.15); /* semi-transparent */
+  backdrop-filter: blur(10px); /* the glass blur */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* soft border */
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 .ContactUsMiddleSectionSectionTextOne:hover {
   transform: scale(1.125);
@@ -121,6 +128,17 @@
   flex-direction: column;
   gap: 15px;
   padding: 10px;
+  background-color: rgba(255, 255, 255, 0.15); /* semi-transparent */
+  backdrop-filter: blur(10px); /* the glass blur */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* soft border */
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .ContactUsBottomSectionText a {
   color: black;
@@ -166,6 +184,9 @@
   }
   .ContactUsBottomSectionText {
     padding-bottom: 25px;
+  }
+  .ContactUsBottomSectionText {
+    width: 100%;
   }
 }
 @media screen and (max-width: 450px) {
