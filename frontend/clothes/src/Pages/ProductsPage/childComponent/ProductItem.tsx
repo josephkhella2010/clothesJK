@@ -53,12 +53,13 @@ import styles from "../productsPage.module.css";
 import type { ProductType } from "../../../helps/InterfacesType";
 interface PropsType {
   products: ProductType[];
+  slicedProduct: ProductType[];
 }
-export default function ProductItem({ products }: PropsType) {
+export default function ProductItem({ products, slicedProduct }: PropsType) {
   return (
     <div className={styles.productItemContainer}>
-      {products &&
-        products.map((item, index: number) => {
+      {slicedProduct &&
+        slicedProduct.map((item, index: number) => {
           return (
             <div className={styles.productItemSection} key={index}>
               <Link
