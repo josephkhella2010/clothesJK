@@ -6,6 +6,7 @@ import LoadingPage from "../../LoadingPage/LoadingPage";
 import ProductItem from "./ProductItem";
 import styles from "../productsPage.module.css";
 import PaginationSection from "./PaginationSection";
+import SearchSection from "./SearchSection";
 export default function ProductsWrapper() {
   const dispatch = useDispatch<AppDispatch>();
 
@@ -72,6 +73,7 @@ export default function ProductsWrapper() {
   return (
     <div className={styles.productMainContainer}>
       <h1>Products</h1>
+      <SearchSection />
       {isLoading ? (
         <>
           <LoadingPage />
