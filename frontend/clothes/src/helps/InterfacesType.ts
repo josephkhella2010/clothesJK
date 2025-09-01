@@ -33,3 +33,6 @@ export interface FlagsMenuType {
   url: string;
   language: string;
 }
+export interface filtereNamType {
+  name: string;
+}

@@ -130,7 +130,8 @@
 }
 
 .productItemSection {
-  background-color: rgba(167, 163, 232, 0.645);
+  /*   background-color: rgba(167, 163, 232, 0.645);
+ */
   padding: 10px;
   border-radius: 15px;
   transition: transform 1s linear;
@@ -182,7 +183,8 @@
   color: white;
 }
 .productItemTextContent button:hover {
-  background-color: rgb(94, 128, 157);
+  /*   background-color: rgb(94, 128, 157);
+ */
   color: black;
   border: none;
 }
@@ -253,6 +255,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 50px;
 }
 .searchMainContainer {
   background-color: white;
@@ -276,10 +280,11 @@
   width: 70%;
   height: 50px;
   border-radius: 25px;
+  background-color: green;
 }
 .searchInput {
   background-color: transparent;
-  width: 90%;
+  width: 80%;
   border: none;
   outline: none;
   height: 100%;
@@ -288,13 +293,14 @@
   border-bottom-left-radius: 25px;
   border-top-left-radius: 25px;
   padding: 10px;
+  cursor: pointer;
 }
 .searchIconContainer {
   /*   background-color: tomato;
  */
   background-color: white;
 
-  width: 10%;
+  width: 20%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -309,9 +315,46 @@
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
 }
-/* .hideSearchIcon {
-  width: 80%;
-}  */
+.dropDownContainer {
+  background-color: blue;
+  width: 200px;
+  position: relative;
+}
+.dropDownPlaceHolder {
+  background-color: aliceblue;
+  padding: 10px;
+  color: rgb(110, 110, 110);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.dropDownMenu {
+  position: absolute;
+  left: 0px;
+  top: 105%;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  list-style: none;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.09),
+    0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropDownMenu li {
+  padding: 10px 10px 20px 10px;
+}
+.dropDownMenu li:nth-of-type(1) {
+  border-bottom: 1px solid black;
+}
+.downArrow {
+  transition: transform 0.3s linear;
+}
+.turnArrow {
+  transform: rotate(-180deg);
+  transition: transform 0.3s linear;
+}
 /*  */
 @media screen and (max-width: 700px) {
   .productItemContainer {
