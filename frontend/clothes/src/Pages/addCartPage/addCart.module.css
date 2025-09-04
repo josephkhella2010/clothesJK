@@ -58,6 +58,27 @@
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
 }
+.quantityContainer {
+  background-color: rgb(4, 106, 24);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.quantityBtnContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.quantityBtnContainer button {
+  padding: 3px 8px;
+  cursor: pointer;
+  background-color: darkred;
+  color: aliceblue;
+  border-radius: 3px;
+  border: 1px solid black;
+  font-size: 20px;
+}
 
 @media screen and (max-width: 650px) {
   .CartItemsContainer {

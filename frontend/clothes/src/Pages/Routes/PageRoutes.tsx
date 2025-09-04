@@ -5,7 +5,6 @@ import SingleProductPage from "../SingleProductPage/SingleProductPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import LoginPage from "../LoginPage/LoginPage";
 import HomePage from "../Home/HomePage";
-
 import NavigationContainer from "../navigation/NavigationContainer";
 import AddCartPage from "../addCartPage/AddCartPage";
 import AboutUSPage from "../AboutUsPage/AboutUSPage";

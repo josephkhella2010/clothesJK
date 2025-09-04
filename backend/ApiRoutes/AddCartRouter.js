@@ -117,5 +117,30 @@ router.delete(
     }
   }
 );
+router.put("/:userId/chanQuantity/:id", authenticateToken, async (req, res) => {
+  try {
+    const { userId, id } = req.params;
+    const { quantity } = req.body;
+
+    if (!req.user || req.user.id !== userId) {
+      return res.status(403).json({ error: "Unauthorized action" });
+    }
+
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).json({ error: "User not found" });
+
+    const item = user.itemProduct.find((item) => item._id.toString() === id);
+
+    if (!item) return res.status(404).json({ error: "Item not found in cart" });
+
+    item.quantity = quantity;
+
+    await user.save();
+    return res.status(200).json({ message: "Item successfully updated", user });
+  } catch (error) {
+    console.error(error);
+    return res.status(400).json({ error: "Error with put cart method" });
+  }
+});
 
 module.exports = router;

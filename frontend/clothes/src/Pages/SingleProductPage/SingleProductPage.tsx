@@ -6,7 +6,7 @@ import type { RootState } from "../../Store/store";
 import { fetchProducts } from "../../reducerSlices/ProductSlice";
 import styles from "./singleProduct.module.css";
 import axios from "axios";
-import { setCartItem } from "../../reducerSlices/CartItemSlice";
+import { setCartItem, setCartItems } from "../../reducerSlices/CartItemSlice";
 import { ImgsArr } from "../../helps/ImgsArr";
 export default function SingleProductPage() {
   const dispatch = useDispatch();
@@ -22,20 +22,48 @@ export default function SingleProductPage() {
   const token = localStorage.getItem("token") || null;
   const singleUserStr = localStorage.getItem("user");
   const singleUser = singleUserStr ? JSON.parse(singleUserStr) : null;
-  console.log(singleUser);
+  /* console.log(singleUser);
   console.log(singleProduct);
-  console.log(token);
+  console.log(token); */
+  const { ItemProduct } =
+    useSelector((state: RootState) => state.cartItemData) || [];
+  async function fetchAddCart() {
+    const UserId = singleUser?._id;
+
+    try {
+      const response = await axios.get(
+        `http://localhost:5200/api/${UserId}/cartItem`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      dispatch(setCartItems(response.data));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    fetchAddCart();
+  }, []);
+  console.log("item", ItemProduct);
   async function handleAddCart() {
     if (!token || !singleUser?._id) {
       console.error("Missing token or user ID");
       return;
     }
-
     const itemCart = {
       ItemProduct: singleProduct?._id,
       quantity: quantityInput,
     };
-
+    const exitItemProduct = ItemProduct.find(
+      (item) => item.ItemProduct?._id === singleProduct?._id
+    );
+    if (exitItemProduct) {
+      toast.error("item is already in cart");
+      return;
+    }
     try {
       const response = await axios.post(
         `http://localhost:5200/api/${singleUser._id}/addItem`,
@@ -55,8 +83,8 @@ export default function SingleProductPage() {
       console.error(error.response?.data || error.message);
     }
   }
-  console.log(token);
-
+  /*   console.log(token);
+   */
   /*  */
   function handleQuantity(action: string) {
     let newQuantity = quantityInput;
