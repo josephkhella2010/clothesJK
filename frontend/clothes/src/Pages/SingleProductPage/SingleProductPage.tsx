@@ -116,9 +116,9 @@ export default function SingleProductPage() {
               <span>Price:</span> {singleProduct.price} $
             </li>
             <div className={styles.quantityContainer}>
-              <button onClick={() => handleQuantity("plus")}>+</button>
-              <span>{quantityInput}</span>
               <button onClick={() => handleQuantity("minus")}>-</button>
+              <span>{quantityInput}</span>
+              <button onClick={() => handleQuantity("plus")}>+</button>
             </div>
             <div className={styles.buttonContainer}>
               <button onClick={handleAddCart}> add to cart</button>
