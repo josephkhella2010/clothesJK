@@ -1,4 +1,3 @@
-import { DiVim } from "react-icons/di";
 import styles from "../HomePage.module.css";
 export default function LowerSection() {
   interface contactInfoType {

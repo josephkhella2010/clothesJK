@@ -1,8 +1,6 @@
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import styles from "../HomePage.module.css";
 import { useEffect, useRef, useState } from "react";
-import { toast } from "react-toastify";
-import { GrApple } from "react-icons/gr";
 /*
 export default function SliderSectionTwo() {
   const ImgUrl: string[] = [

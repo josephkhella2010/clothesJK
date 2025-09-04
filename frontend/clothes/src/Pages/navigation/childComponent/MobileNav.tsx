@@ -58,7 +58,15 @@ export default function MobileNav({ showMenu, setShowMenu }: PropsType) {
           <div className={styles.mobileMenuBtn}>
             <button onClick={() => navigate("/register")}>Register</button>
             {token ? (
-              <button onClick={() => dispatch(setLogOUt())}>logOut</button>
+              <button
+                onClick={() => {
+                  dispatch(setLogOUt());
+                  localStorage.removeItem("token");
+                  navigate("/");
+                }}
+              >
+                logOut
+              </button>
             ) : (
               <button onClick={() => navigate("/login")}>Login</button>
             )}

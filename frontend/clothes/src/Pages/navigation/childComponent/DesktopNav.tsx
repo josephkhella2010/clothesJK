@@ -26,7 +26,15 @@ export default function DesktopNav({ showMenu, setShowMenu }: PropsType) {
           <div className={styles.desktopmenuBtn}>
             <button onClick={() => navigate("/register")}>Register</button>
             {token ? (
-              <button onClick={() => dispatch(setLogOUt())}>logOut</button>
+              <button
+                onClick={() => {
+                  dispatch(setLogOUt());
+                  localStorage.removeItem("token");
+                  navigate("/");
+                }}
+              >
+                logOut
+              </button>
             ) : (
               <button onClick={() => navigate("/login")}>Login</button>
             )}

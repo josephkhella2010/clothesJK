@@ -1,4 +1,4 @@
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import type { filtereNamType } from "../../../helps/InterfacesType";
 import styles from "../productsPage.module.css";
 

@@ -55,10 +55,7 @@ interface PropsType {
   products: ProductType[];
   SlicedFilteredProduct: ProductType[];
 }
-export default function ProductItem({
-  products,
-  SlicedFilteredProduct,
-}: PropsType) {
+export default function ProductItem({ SlicedFilteredProduct }: PropsType) {
   return (
     <div className={styles.productItemContainer}>
       {SlicedFilteredProduct &&

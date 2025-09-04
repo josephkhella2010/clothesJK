@@ -9,7 +9,9 @@ import {
   setLogOUt,
   setPostLoginSaga,
 } from "../../../reducerSlices/LoginUserSlice";
+import { useNavigate } from "react-router-dom";
 export default function LoginSection() {
+  const navigate = useNavigate();
   const [userInfo, setuserInfo] = useState<SingleUserType>({
     username: "",
     password: "",
@@ -53,8 +55,7 @@ export default function LoginSection() {
       })
     );
 
-    toast.success("successfully login");
-    console.log(findUser);
+    //console.log(findUser);
     try {
       if (!userInfo.username || !userInfo.password) {
         toast.error(" please fill all field");
@@ -63,6 +64,12 @@ export default function LoginSection() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (token) {
+      navigate("/");
+    }
+  }, [token]);
   return (
     <div className={styles.formContainer}>
       <ToastContainer />

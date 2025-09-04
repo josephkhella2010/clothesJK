@@ -19,10 +19,12 @@ export default function SingleProductPage() {
   const singleProduct = products.find((item) => item._id === id);
   const navigate = useNavigate();
   /*  */
-  const token = localStorage.getItem("token");
-  const singleUser = JSON.parse(localStorage.getItem("user") || "");
+  const token = localStorage.getItem("token") || null;
+  const singleUserStr = localStorage.getItem("user");
+  const singleUser = singleUserStr ? JSON.parse(singleUserStr) : null;
   console.log(singleUser);
   console.log(singleProduct);
+  console.log(token);
   async function handleAddCart() {
     if (!token || !singleUser?._id) {
       console.error("Missing token or user ID");
@@ -54,7 +56,6 @@ export default function SingleProductPage() {
     }
   }
   console.log(token);
-  console.log(`http://localhost:5200/api/${singleUser._id}/addItem`);
 
   /*  */
   function handleQuantity(action: string) {

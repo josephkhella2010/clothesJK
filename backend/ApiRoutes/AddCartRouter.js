@@ -95,8 +95,8 @@ router.delete(
     try {
       const { userId, id } = req.params;
 
-      console.log("Decoded user:", req.user); // <-- This will show what middleware decoded
-      console.log("userId from URL:", userId);
+      /*  console.log("Decoded user:", req.user); // <-- This will show what middleware decoded
+      console.log("userId from URL:", userId); */
 
       if (!req.user || req.user.id !== userId) {
         return res.status(403).json({ error: "Unauthorized action" });
@@ -117,9 +117,5 @@ router.delete(
     }
   }
 );
-
-// GET cart items
-
-// DELETE cart item by ItemProduct._id
 
 module.exports = router;

@@ -20,7 +20,6 @@ export default function SearchSection({
   showDropDown,
   setShowDropDown,
   searchInput,
-  setSearchInput,
   handleSearch,
 }: PropsType) {
   const [isTyping, setIsTyping] = useState<boolean>(false);

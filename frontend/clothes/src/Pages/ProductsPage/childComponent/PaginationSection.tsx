@@ -10,7 +10,6 @@ interface PropsType {
   currentPage: number;
 }
 export default function PaginationSection({
-  products,
   visiblePages,
   changePage,
   handleNext,
