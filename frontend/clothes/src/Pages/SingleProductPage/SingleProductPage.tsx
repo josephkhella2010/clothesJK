@@ -1,13 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import type { RootState } from "../../Store/store";
 import { fetchProducts } from "../../reducerSlices/ProductSlice";
 import styles from "./singleProduct.module.css";
 import axios from "axios";
 import { setCartItem } from "../../reducerSlices/CartItemSlice";
-import Trainig from "./Trainig";
+import { ImgsArr } from "../../helps/ImgsArr";
 export default function SingleProductPage() {
   const dispatch = useDispatch();
   const { id } = useParams<{ id: string }>();
@@ -15,12 +15,14 @@ export default function SingleProductPage() {
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
-
+  const [quantityInput, setQuantityInput] = useState(1);
   const singleProduct = products.find((item) => item._id === id);
+  const navigate = useNavigate();
   /*  */
   const token = localStorage.getItem("token");
   const singleUser = JSON.parse(localStorage.getItem("user") || "");
-
+  console.log(singleUser);
+  console.log(singleProduct);
   async function handleAddCart() {
     if (!token || !singleUser?._id) {
       console.error("Missing token or user ID");
@@ -29,7 +31,7 @@ export default function SingleProductPage() {
 
     const itemCart = {
       ItemProduct: singleProduct?._id,
-      quantity: 2,
+      quantity: quantityInput,
     };
 
     try {
@@ -45,6 +47,8 @@ export default function SingleProductPage() {
 
       dispatch(setCartItem(response.data));
       console.log(response.data);
+      navigate("/addCart");
+      toast.success("item added sucessfully");
     } catch (error: any) {
       console.error(error.response?.data || error.message);
     }
@@ -53,21 +57,48 @@ export default function SingleProductPage() {
   console.log(`http://localhost:5200/api/${singleUser._id}/addItem`);
 
   /*  */
+  function handleQuantity(action: string) {
+    let newQuantity = quantityInput;
+    if (action === "plus") {
+      newQuantity = newQuantity + 1;
+    }
+    if (action === "minus" && newQuantity > 1) {
+      newQuantity = newQuantity - 1;
+    }
+    setQuantityInput(newQuantity);
+  }
   return (
     <div className={styles.SingleProductWrapper}>
       <ToastContainer />
-
-      <h1> single Page</h1>
-      {singleProduct && (
-        <div>
-          <li>{singleProduct._id}</li>
-          <li>Name: {singleProduct.name}</li>
-          <li>Description: {singleProduct.description}</li>
-          <li>Price: {singleProduct.price} $</li>
-          <button onClick={handleAddCart}> add to cart</button>
+      <h1> Product Details</h1>
+      <div className={styles.ProductDetailsMainContainer}>
+        <div className={styles.ProductDetailsImgContainer}>
+          <img src={ImgsArr["AboutUsPageActivityThree"]} alt="" />
         </div>
-      )}
-      <Trainig singleProduct={singleProduct} />
+        {singleProduct && (
+          <div className={styles.ProductDetailsContainer}>
+            <li>
+              <span>Name:</span> {singleProduct.name}
+            </li>
+            <li>
+              <span>Description:</span> {singleProduct.description}
+            </li>
+            <li>
+              <span>Price:</span> {singleProduct.price} $
+            </li>
+            <div className={styles.quantityContainer}>
+              <button onClick={() => handleQuantity("plus")}>+</button>
+              <span>{quantityInput}</span>
+              <button onClick={() => handleQuantity("minus")}>-</button>
+            </div>
+            <div className={styles.buttonContainer}>
+              <button onClick={handleAddCart}> add to cart</button>
+            </div>
+          </div>
+        )}
+        {/*       <Trainig singleProduct={singleProduct} />
+         */}{" "}
+      </div>
     </div>
   );
 }

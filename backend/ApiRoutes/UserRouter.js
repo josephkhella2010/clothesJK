@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const User = require("../mongoSchemas/UserSchema");
 const { generateToken } = require("../middleware/auth");
-
 router.post("/addUser", async (req, res) => {
   const { username, email, password } = req.body;
   try {
@@ -33,7 +32,7 @@ router.get("/users", async (req, res) => {
     return res.status(500).json({ error: "error with get user" });
   }
 });
-/*  login  */
+///  login
 router.post("/loginUser", async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -54,7 +53,7 @@ router.post("/loginUser", async (req, res) => {
     }
     // create JWT
     const token = generateToken({
-      id: existUser.id,
+      id: existUser._id.toString(), // ✅ use _id, not id
       username: existUser.username,
       email: existUser.email,
       password: existUser.password,
@@ -66,5 +65,7 @@ router.post("/loginUser", async (req, res) => {
     return res.status(500).json({ error: "error with post loginUser" });
   }
 });
+
+module.exports = router;
 
 module.exports = router;

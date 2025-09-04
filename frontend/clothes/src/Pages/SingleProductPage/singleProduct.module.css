@@ -1,137 +1,86 @@
-.productItemSection {
-  padding: 10px;
-  border-radius: 15px;
-  transition: transform 1s linear;
-  width: 300px;
-  perspective: 1000px;
-}
-
-.productItemLink {
-  list-style: none;
-  word-break: break-all;
-  text-decoration: none;
-  display: flex;
-  gap: 15px;
-  display: block;
-  flex-direction: column;
-  cursor: pointer;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-  background-color: rgba(167, 163, 232, 0.645);
-  border-radius: 12px;
-}
-.productItemLink:hover {
-  transform: rotateY(180deg);
-}
-
-.frontFace,
-.backFace {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.frontFace {
-  background: rgb(74, 74, 31);
-  backface-visibility: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.backFace {
-  background: #5b0101;
-  transform: rotateY(180deg);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.backFaceText {
-  height: 40%;
-  background-color: rgb(195, 71, 5);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  color: aliceblue;
-}
-
-/*  */
-/*  */
-
-.productItemTextContent {
-  /*   background-color: rgb(138, 138, 23);
+.SingleProductWrapper {
+  /*   background-color: violet;
  */
-  display: flex;
-  gap: 15px;
-  flex-direction: column;
-  font-size: 20px;
-  color: aliceblue;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.productItemSection img {
   width: 100%;
-  border-radius: 5px;
+  min-height: 100dvh;
 }
-.productItemTextContent li span {
-  font-size: 25px;
-  font-weight: bold;
-}
-.productItemTextContent button {
-  width: 60%;
-  padding: 10px;
-  background-color: transparent;
-  border: 1px solid white;
-  border-radius: 10px;
-  height: 60px;
+.SingleProductWrapper h1 {
+  padding: 50px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  transition: transform 0.5s linear;
-  color: white;
 }
-.productItemTextContent button:hover {
-  background-color: rgb(94, 128, 157);
-  color: black;
-  border: none;
+.ProductDetailsMainContainer {
+  /*   background-color: orange;
+ */
+  padding: 30px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
 }
-.productItemTextContent button:hover {
-  transform: scale(1.3);
+.ProductDetailsImgContainer {
+}
+.ProductDetailsImgContainer img {
+  width: 100%;
+  height: 100%;
+}
+.ProductDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+.ProductDetailsContainer li {
+  list-style: none;
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
+.ProductDetailsContainer li span {
+  font-weight: bolder;
+  font-size: 24px;
+}
 .buttonContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.buttonContainer button {
+  height: 40px;
+  padding: 10px;
+  border-radius: 6px;
+  width: 40%;
+  border: none;
+  text-transform: capitalize;
   cursor: pointer;
-}
+  background-color: darkred;
 
-/*  */
-@media screen and (max-width: 700px) {
-  .productItemContainer {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  color: aliceblue;
 }
-
-/*  */
-@media screen and (max-width: 450px) {
-  .productItemContainer {
+.buttonContainer button:hover {
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+.quantityContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.quantityContainer button {
+  padding: 3px 10px;
+  cursor: pointer;
+  background-color: darkred;
+  color: white;
+  border: 1px solid darkred;
+  border-radius: 3px;
+}
+@media screen and (max-width: 650px) {
+  .ProductDetailsMainContainer {
     grid-template-columns: repeat(1, 1fr);
   }
 }

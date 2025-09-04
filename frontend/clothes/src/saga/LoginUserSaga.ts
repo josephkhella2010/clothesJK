@@ -36,7 +36,7 @@ function* postLoginUser(action: PayloadAction<SingleUserType>): SagaIterator {
     yield put(setUserStorage(user)); // <-- update Redux right away
 
     localStorage.setItem("user", JSON.stringify(user));
-    localStorage.setItem("token", JSON.stringify(token));
+    localStorage.setItem("token", token); // ✅ remove JSON.stringify
   } catch (error) {
     console.log(error);
   }

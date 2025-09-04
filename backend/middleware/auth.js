@@ -35,3 +35,5 @@ module.exports = {
   verifyToken,
   authenticateToken,
 };
+
+module.exports = { generateToken, verifyToken, authenticateToken };

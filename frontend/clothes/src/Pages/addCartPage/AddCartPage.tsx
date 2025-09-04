@@ -1,8 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCartItems } from "../../reducerSlices/CartItemSlice";
 import type { RootState } from "../../Store/store";
+import { toast } from "react-toastify";
 
 export default function AddCartPage() {
   const token = localStorage.getItem("token");
@@ -32,6 +33,28 @@ export default function AddCartPage() {
   useEffect(() => {
     fetchAddCart();
   }, []);
+  /*  */
+  async function handleDelete(id: string | undefined | null | number) {
+    console.log(id);
+    console.log(token);
+
+    const UserId = singleUser?._id;
+    try {
+      await axios.delete(
+        `http://localhost:5200/api/${UserId}/deleteCartItem/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      fetchAddCart();
+      toast.success("Item deleted successfully");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div>
       <h2> hellow {singleUser?.username}</h2>
@@ -50,6 +73,7 @@ export default function AddCartPage() {
               Quantity:
               {item.quantity}
             </li>
+            <button onClick={() => handleDelete(item?._id)}> Delete</button>
           </ul>
         );
       })}

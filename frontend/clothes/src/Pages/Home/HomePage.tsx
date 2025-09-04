@@ -8,6 +8,7 @@ export default function HomePage() {
   const t = useTranslate(); // get the translation function
   console.log(LanguagesMapping["home.title"]); // should log { en: "...", sv: "..." }
   console.log(t("home.title"));
+
   return (
     <div className={styles.HomePageWrapper}>
       <UpperSection />

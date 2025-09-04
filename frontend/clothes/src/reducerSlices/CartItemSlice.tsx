@@ -5,11 +5,12 @@ interface CartProductType {
   name: string;
   description: string;
   price: number;
+  _id?: string | number;
 }
 interface ItemCartType {
   ItemProduct: CartProductType;
   quantity: number;
-  _id: string | null;
+  _id: string | undefined | null;
 }
 interface initialStateType {
   ItemProduct: ItemCartType[];

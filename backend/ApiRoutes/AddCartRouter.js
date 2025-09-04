@@ -39,13 +39,14 @@ router.get("/:userId/cartItem", authenticateToken, async (req, res) => {
 
 module.exports = router;
  */
+
+/* ////////// */
 const express = require("express");
 const router = express.Router();
 const User = require("../mongoSchemas/UserSchema");
 const { authenticateToken } = require("../middleware/auth");
-
 // Add item to user's cart
-router.post("/:userId/addItem", async (req, res) => {
+router.post("/:userId/addItem", authenticateToken, async (req, res) => {
   try {
     const { userId } = req.params;
     const { ItemProduct, quantity } = req.body;
@@ -73,7 +74,7 @@ router.post("/:userId/addItem", async (req, res) => {
 });
 
 // Get all items in user's cart
-router.get("/:userId/cartItem", async (req, res) => {
+router.get("/:userId/cartItem", authenticateToken, async (req, res) => {
   try {
     const { userId } = req.params;
     const user = await User.findById(userId).populate(
@@ -86,5 +87,39 @@ router.get("/:userId/cartItem", async (req, res) => {
     return res.status(500).json({ error: "Error with get itemcart request" });
   }
 });
+
+router.delete(
+  "/:userId/deleteCartItem/:id",
+  authenticateToken,
+  async (req, res) => {
+    try {
+      const { userId, id } = req.params;
+
+      console.log("Decoded user:", req.user); // <-- This will show what middleware decoded
+      console.log("userId from URL:", userId);
+
+      if (!req.user || req.user.id !== userId) {
+        return res.status(403).json({ error: "Unauthorized action" });
+      }
+
+      const user = await User.findById(userId);
+      if (!user) return res.status(404).json({ error: "User not found" });
+
+      user.itemProduct = user.itemProduct.filter(
+        (item) => item._id.toString() !== id
+      );
+
+      await user.save();
+      return res.status(200).json({ message: "Item successfully removed" });
+    } catch (error) {
+      console.error(error);
+      return res.status(400).json({ error: "Error with delete cart method" });
+    }
+  }
+);
+
+// GET cart items
+
+// DELETE cart item by ItemProduct._id
 
 module.exports = router;
