@@ -74,7 +74,13 @@ export default function QuestionSection() {
                   onClick={() => handleExpand(index)}
                 >
                   <h3>{item.header}</h3>
-                  <MdKeyboardArrowDown className={styles.downArrowIcon} />
+                  <MdKeyboardArrowDown
+                    className={`${styles.downArrowIcon}
+                  ${isExpanded[index] ? styles.expanded : styles.notExpanded}
+                  
+                  `}
+                    style={{ transition: "transform 0.2s ease-in-out" }}
+                  />
                 </div>
 
                 <div
