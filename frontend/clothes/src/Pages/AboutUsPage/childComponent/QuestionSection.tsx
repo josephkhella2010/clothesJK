@@ -26,7 +26,7 @@ export default function QuestionSection() {
       heightRefs.current.forEach((ref, i) => {
         /*  
         //another method
-        
+
         const updateHeightText = [...heightText];
         updateHeightText[i] = ref?.scrollHeight || 0;
 
@@ -101,35 +101,3 @@ export default function QuestionSection() {
     </div>
   );
 }
-
-/* 
-
-            <div className={styles.questionSection} key={index}>
-                <div
-                  className={styles.questionHeader}
-                  onClick={() => handleExpand(index)}
-                >
-                  <h3>{item.header}</h3>
-                  <MdKeyboardArrowDown className={styles.downArrowIcon} />
-                </div>
-                <div
-                  className={`${styles.questionBody}  ${
-                    isExpanded[index] ? styles.expanded : styles.notExpanded
-                  } `}
-                  ref={(el) => {
-                    heightRefs.current[index] = el;
-                  }}
-                  style={{
-                    maxHeight: isExpanded[index]
-                      ? `${heightText[index]}px`
-                      : "0px",
-                    overflow: "hidden",
-                    transition: "max-height 0.3s ease-in-out",
-                  }}
-                >
-                  <p>{index + 1}</p>
-                  <p>{item.body}</p>
-                </div>
-              </div>
-
-*/
