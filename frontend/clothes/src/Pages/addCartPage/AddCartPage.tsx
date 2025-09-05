@@ -122,6 +122,8 @@ export default function AddCartPage() {
                   <button onClick={() => handleChangeQuantity("minus", ind)}>
                     -
                   </button>
+                  <p>{item.quantity}</p>
+
                   <p>{quantityInput[ind]}</p>
                   <button onClick={() => handleChangeQuantity("plus", ind)}>
                     +

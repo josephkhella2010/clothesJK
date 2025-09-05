@@ -36,3 +36,11 @@ export interface FlagsMenuType {
 export interface filtereNamType {
   name: string;
 }
+
+export interface QuestionItemType {
+  header: string;
+  body: string;
+}
+/* export interface QuestionType {
+  Questions: QuestionItemType[];
+} */
