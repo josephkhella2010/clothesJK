@@ -24,7 +24,10 @@ export default function QuestionSection() {
   useEffect(() => {
     function handleResize() {
       heightRefs.current.forEach((ref, i) => {
-        /*   const updateHeightText = [...heightText];
+        /*  
+        //another method
+        
+        const updateHeightText = [...heightText];
         updateHeightText[i] = ref?.scrollHeight || 0;
 
         if (ref && isExpanded[i]) {
@@ -42,7 +45,10 @@ export default function QuestionSection() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [isExpanded]);
-  /*   useEffect(() => {
+  /*  
+  // another method
+  
+  useEffect(() => {
     function handleResize() {
       setHeightText((prev) =>
         heightRefs.current.map((ref, i) => ref?.scrollHeight || prev[i] || 0)
